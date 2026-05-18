@@ -318,9 +318,8 @@ const Hero = () => {
           className="text-sm sm:text-base uppercase font-medium mb-6"
           style={{ color: "#d4a017", letterSpacing: "0.18em" }}
         >
-          Planter & Zonal <br />
-          Superintendent of CAC <br />
-          GMPM Adamimogo Global Outreach
+          Planter & Zonal<br />
+          Superintendent GMPM<br />Adamimogo Global Outreach
         </motion.p>
 
         {/* Gold divider */}
