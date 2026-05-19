@@ -40,7 +40,7 @@ const scaleIn = {
   },
 };
 
-const Hero = () => {
+const Hero = ({ hideGrandPageCta = false }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -122,14 +122,33 @@ const Hero = () => {
           "linear-gradient(180deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f20 100%)",
       }}
     >
-      {/* Canvas light rays */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none"
         style={{ zIndex: 1 }}
       />
 
-      {/* Floating gold particles */}
+      <motion.a
+        href="https://happy-birthday-prophet-sam-olu-alo.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: hideGrandPageCta ? 0 : 1, y: 0 }}
+        transition={{ duration: 0.35, delay: 0.1 }}
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] shadow-lg transition-opacity duration-300"
+        style={{
+          background: "rgba(10,10,26,0.9)",
+          borderColor: "#d4a017",
+          color: "#d4a017",
+          boxShadow: "0 0 18px rgba(212,160,23,0.18)",
+          backdropFilter: "blur(8px)",
+          pointerEvents: hideGrandPageCta ? "none" : "auto",
+        }}
+      >
+        <span>Open Grand Page</span>
+        <span aria-hidden="true">↗</span>
+      </motion.a>
+
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{ zIndex: 2 }}
@@ -161,7 +180,6 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Main content */}
       <motion.div
         className="relative flex flex-col items-center text-center px-4 sm:px-8 max-w-5xl mx-auto"
         style={{ zIndex: 10 }}
@@ -169,7 +187,6 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Church Name */}
         <motion.p
           variants={fadeUp}
           className="text-xs sm:text-sm font-medium uppercase mb-4"
@@ -178,7 +195,6 @@ const Hero = () => {
           C.A.C Grace of Mercy Prayer Mountain International
         </motion.p>
 
-        {/* Gold divider */}
         <motion.div
           variants={fadeIn}
           className="flex items-center gap-3 mb-6 w-full max-w-md"
@@ -201,12 +217,10 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* Logos + We Celebrate Row */}
         <motion.div
           variants={fadeUp}
           className="flex items-center justify-center gap-6 w-full mb-5"
         >
-          {/* CAC Logo Left */}
           <div
             style={{
               background:
@@ -234,7 +248,6 @@ const Hero = () => {
             />
           </div>
 
-          {/* We Celebrate */}
           <p
             className="text-xs sm:text-sm uppercase font-medium"
             style={{ color: "#ffffff", letterSpacing: "0.35em", opacity: 0.8 }}
@@ -242,7 +255,6 @@ const Hero = () => {
             We Celebrate
           </p>
 
-          {/* GMPM Logo Right */}
           <div
             style={{
               background:
@@ -297,7 +309,6 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* MAIN NAME */}
         <motion.h1
           variants={scaleIn}
           className="font-bold mb-4 leading-none gold-text-glow"
@@ -312,17 +323,16 @@ const Hero = () => {
           Prophet Sam Olu Alo
         </motion.h1>
 
-        {/* Role */}
         <motion.p
           variants={fadeUp}
           className="text-sm sm:text-base uppercase font-medium mb-6"
           style={{ color: "#d4a017", letterSpacing: "0.18em" }}
         >
-          Planter & Zonal<br />
-          Superintendent Of GMPM<br />Adamimogo Global Outreach
+          Planter & Zonal <br />
+          Superintendent of CAC <br />
+          GMPM Adamimogo Global Outreach
         </motion.p>
 
-        {/* Gold divider */}
         <motion.div
           variants={fadeIn}
           className="flex items-center gap-3 mb-8 w-full max-w-sm"
@@ -345,7 +355,6 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* Tagline */}
         <motion.p
           variants={fadeUp}
           className="italic text-lg sm:text-xl md:text-2xl mb-4 max-w-2xl leading-relaxed"
@@ -359,7 +368,6 @@ const Hero = () => {
           heavens."
         </motion.p>
 
-        {/* Bible verse */}
         <motion.p
           variants={fadeIn}
           className="text-xs sm:text-sm italic mb-8"
@@ -368,7 +376,6 @@ const Hero = () => {
           — Jeremiah 1:5
         </motion.p>
 
-        {/* Birthday badge */}
         <motion.div
           variants={scaleIn}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 border"
@@ -388,7 +395,6 @@ const Hero = () => {
           </span>
         </motion.div>
 
-        {/* Adamimogo label */}
         <motion.p
           variants={fadeIn}
           className="text-xs uppercase"
@@ -398,7 +404,6 @@ const Hero = () => {
         </motion.p>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ zIndex: 10 }}

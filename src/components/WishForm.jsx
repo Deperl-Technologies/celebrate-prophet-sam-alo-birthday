@@ -37,7 +37,7 @@ const Field = ({ label, optional, children }) => (
   </div>
 );
 
-const WishForm = () => {
+const WishForm = ({ grandPageCtaRef }) => {
   const [formData, setFormData] = useState({
     name: "",
     location: "",
@@ -379,6 +379,23 @@ const WishForm = () => {
                     "Send My Wish 🙏"
                   )}
                 </motion.button>
+
+                <motion.a
+                  ref={grandPageCtaRef}
+                  href="https://happy-birthday-prophet-sam-olu-alo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border px-4 py-4 text-sm sm:text-base font-semibold uppercase tracking-[0.18em]"
+                  style={{
+                    background: "rgba(10,10,26,0.8)",
+                    borderColor: "#d4a017",
+                    color: "#d4a017",
+                    boxShadow: "0 0 18px rgba(212,160,23,0.15)",
+                  }}
+                >
+                  <span>Open Grand Page</span>
+                  <span aria-hidden="true">↗</span>
+                </motion.a>
               </motion.form>
             )}
           </AnimatePresence>
