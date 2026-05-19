@@ -132,10 +132,10 @@ const Hero = ({ hideGrandPageCta = false }) => {
         href="https://happy-birthday-prophet-sam-olu-alo.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: hideGrandPageCta ? 0 : 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.1 }}
-        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] shadow-lg transition-opacity duration-300"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.16em] shadow-lg transition-opacity duration-300"
         style={{
           background: "rgba(10,10,26,0.9)",
           borderColor: "#d4a017",
