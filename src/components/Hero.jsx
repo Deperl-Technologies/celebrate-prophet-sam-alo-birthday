@@ -319,7 +319,7 @@ const Hero = () => {
           style={{ color: "#d4a017", letterSpacing: "0.18em" }}
         >
           Planter & Zonal<br />
-          Superintendent GMPM<br />Adamimogo Global Outreach
+          Superintendent Of GMPM<br />Adamimogo Global Outreach
         </motion.p>
 
         {/* Gold divider */}
